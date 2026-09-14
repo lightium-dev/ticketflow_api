@@ -1,0 +1,33 @@
+{
+  "name": "ticketflowapi",
+  "version": "1.0.0",
+  "description": "TicketFlow API - backend REST pour la gestion de tickets de support client",
+  "main": "src/server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "lint": "eslint src tests",
+    "test": "jest --coverage",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pg": "^8.23.0",
+    "sequelize": "^6.37.8",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "eslint": "^10.10.0",
+    "jest": "^30.5.1",
+    "supertest": "^7.2.2"
+  }
+}
