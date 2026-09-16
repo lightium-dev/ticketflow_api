@@ -44,11 +44,19 @@ async function deleteTicket(req, res, next) {
     next(err);
   }
 }
-
+async function changeTicketStatus(req, res, next) {
+  try {
+    const ticket = await ticketService.changeTicketStatus(req.params.id, req.body.status);
+    res.status(200).json(ticket);
+  } catch (err) {
+    next(err);
+  }
+}
 module.exports = {
   getAllTickets,
   getTicketById,
   createTicket,
   updateTicket,
   deleteTicket,
+  changeTicketStatus,
 };

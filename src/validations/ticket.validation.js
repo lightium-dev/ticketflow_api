@@ -7,4 +7,8 @@ const ticketSchema = z.object({
   category_id: z.number().int().positive('category_id must be a positive integer'),
 });
 
-module.exports = { ticketSchema };
+const statusChangeSchema = z.object({
+  status: z.enum(['open', 'in_progress', 'resolved', 'closed']),
+});
+
+module.exports = { ticketSchema, statusChangeSchema };
