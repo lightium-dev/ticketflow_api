@@ -2,7 +2,6 @@ require('dotenv').config();
 const { sequelize, testConnection } = require('./config/database');
 const Category = require('./models/category.model');
 const Ticket = require('./models/ticket.model');
-
 async function syncDatabase() {
   await testConnection();
   console.log('Connection established.');
@@ -12,7 +11,6 @@ async function syncDatabase() {
 
   process.exit(0);
 }
-
 syncDatabase().catch((err) => {
   console.error('Failed to sync database:', err);
   process.exit(1);
